@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 420" width="620" height="420" font-family="system-ui, -apple-system, Segoe UI, Arial, sans-serif" role="img" aria-label="Kostenvergleich: beste gegen mittlere Zusammenstellung">
+<rect width="620" height="420" fill="#ffffff"/>
+<text x="40" y="36" font-size="24" font-weight="600" fill="#15302f">Was die richtige Wahl spart</text>
+<text x="40" y="64" font-size="19" fill="#5a6b6a">Alle 1.838 gültigen Zusammenstellungen verglichen</text>
+<rect x="110" y="235" width="110" height="85" fill="#1a8f8a" rx="2"><title>Beste Zusammenstellung: 4.787.600</title></rect>
+<text x="165" y="221" font-size="22" font-weight="700" text-anchor="middle" fill="#15302f">4,8 Mio.</text>
+<text x="165" y="350" font-size="19" text-anchor="middle" fill="#5a6b6a">optimal gewählt</text>
+<rect x="300" y="124" width="110" height="196" fill="#c2603f" rx="2"><title>Zehnmal Stufe 12: 11.027.600</title></rect>
+<text x="355" y="110" font-size="22" font-weight="700" text-anchor="middle" fill="#15302f">11,0 Mio.</text>
+<text x="355" y="350" font-size="19" text-anchor="middle" fill="#5a6b6a">zehnmal Stufe 12</text>
+<line x1="40" y1="320" x2="580" y2="320" stroke="#c3cfce" stroke-width="1.5"/>
+<path d="M 430 124 L 446 124 L 446 235 L 430 235" fill="none" stroke="#5a6b6a" stroke-width="1.5"/>
+<text x="456" y="175.5" font-size="21" font-weight="700" fill="#15302f">2,3-fach</text>
+<text x="456" y="199.5" font-size="19" fill="#5a6b6a">6,2 Mio. gespart</text>
+<text x="40" y="398" font-size="19" fill="#5a6b6a">Von 1.838 Zusammenstellungen ist diese Wahl Platz 1.825.</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 474" width="660" height="474" font-family="system-ui, -apple-system, Segoe UI, Arial, sans-serif" role="img" aria-label="Optimaler Wechselzeitpunkt über der Anzahl Versuche; ab neun Versuchen konstant bei drei">
+<rect width="660" height="474" fill="#ffffff"/>
+<text x="40" y="36" font-size="24" font-weight="600" fill="#15302f">Wann lohnt der Wechsel?</text>
+<text x="40" y="64" font-size="19" fill="#5a6b6a">Bester Wechselzeitpunkt, je 1 Mio. Durchläufe pro Punkt</text>
+<line x1="96" y1="348.0" x2="624" y2="348.0" stroke="#eef3f2"/>
+<text x="84" y="354.0" font-size="19" text-anchor="end" fill="#5a6b6a">0</text>
+<line x1="96" y1="297.6" x2="624" y2="297.6" stroke="#eef3f2"/>
+<text x="84" y="303.6" font-size="19" text-anchor="end" fill="#5a6b6a">1</text>
+<line x1="96" y1="247.2" x2="624" y2="247.2" stroke="#eef3f2"/>
+<text x="84" y="253.2" font-size="19" text-anchor="end" fill="#5a6b6a">2</text>
+<line x1="96" y1="196.8" x2="624" y2="196.8" stroke="#eef3f2"/>
+<text x="84" y="202.8" font-size="19" text-anchor="end" fill="#5a6b6a">3</text>
+<line x1="96" y1="146.4" x2="624" y2="146.4" stroke="#eef3f2"/>
+<text x="84" y="152.4" font-size="19" text-anchor="end" fill="#5a6b6a">4</text>
+<line x1="96" y1="96.0" x2="624" y2="96.0" stroke="#eef3f2"/>
+<text x="84" y="102.0" font-size="19" text-anchor="end" fill="#5a6b6a">5</text>
+<path d="M  96.0 348.0 L 123.8 297.6 L 151.6 247.2 L 179.4 196.8 L 207.2 146.4 L 234.9 96.0 L 262.7 146.4 L 290.5 146.4 L 318.3 196.8 L 346.1 196.8 L 373.9 196.8 L 401.7 196.8 L 429.5 196.8 L 457.3 196.8 L 485.1 196.8 L 512.8 196.8 L 540.6 196.8 L 568.4 196.8 L 596.2 196.8 L 624.0 196.8" fill="none" stroke="#1a8f8a" stroke-width="2.8"/>
+<circle cx="96.0" cy="348.0" r="4.5" fill="#1a8f8a"><title>1 Versuche: wechseln bei 0 verbleibenden</title></circle>
+<circle cx="123.8" cy="297.6" r="4.5" fill="#1a8f8a"><title>2 Versuche: wechseln bei 1 verbleibenden</title></circle>
+<circle cx="151.6" cy="247.2" r="4.5" fill="#1a8f8a"><title>3 Versuche: wechseln bei 2 verbleibenden</title></circle>
+<circle cx="179.4" cy="196.8" r="4.5" fill="#1a8f8a"><title>4 Versuche: wechseln bei 3 verbleibenden</title></circle>
+<circle cx="207.2" cy="146.4" r="4.5" fill="#1a8f8a"><title>5 Versuche: wechseln bei 4 verbleibenden</title></circle>
+<circle cx="234.9" cy="96.0" r="4.5" fill="#1a8f8a"><title>6 Versuche: wechseln bei 5 verbleibenden</title></circle>
+<circle cx="262.7" cy="146.4" r="4.5" fill="#1a8f8a"><title>7 Versuche: wechseln bei 4 verbleibenden</title></circle>
+<circle cx="290.5" cy="146.4" r="4.5" fill="#1a8f8a"><title>8 Versuche: wechseln bei 4 verbleibenden</title></circle>
+<circle cx="318.3" cy="196.8" r="4.5" fill="#1a8f8a"><title>9 Versuche: wechseln bei 3 verbleibenden</title></circle>
+<circle cx="346.1" cy="196.8" r="4.5" fill="#1a8f8a"><title>10 Versuche: wechseln bei 3 verbleibenden</title></circle>
+<circle cx="373.9" cy="196.8" r="4.5" fill="#1a8f8a"><title>11 Versuche: wechseln bei 3 verbleibenden</title></circle>
+<circle cx="401.7" cy="196.8" r="4.5" fill="#1a8f8a"><title>12 Versuche: wechseln bei 3 verbleibenden</title></circle>
+<circle cx="429.5" cy="196.8" r="4.5" fill="#1a8f8a"><title>13 Versuche: wechseln bei 3 verbleibenden</title></circle>
+<circle cx="457.3" cy="196.8" r="4.5" fill="#1a8f8a"><title>14 Versuche: wechseln bei 3 verbleibenden</title></circle>
+<circle cx="485.1" cy="196.8" r="4.5" fill="#1a8f8a"><title>15 Versuche: wechseln bei 3 verbleibenden</title></circle>
+<circle cx="512.8" cy="196.8" r="4.5" fill="#1a8f8a"><title>16 Versuche: wechseln bei 3 verbleibenden</title></circle>
+<circle cx="540.6" cy="196.8" r="4.5" fill="#1a8f8a"><title>17 Versuche: wechseln bei 3 verbleibenden</title></circle>
+<circle cx="568.4" cy="196.8" r="4.5" fill="#1a8f8a"><title>18 Versuche: wechseln bei 3 verbleibenden</title></circle>
+<circle cx="596.2" cy="196.8" r="4.5" fill="#1a8f8a"><title>19 Versuche: wechseln bei 3 verbleibenden</title></circle>
+<circle cx="624.0" cy="196.8" r="4.5" fill="#1a8f8a"><title>20 Versuche: wechseln bei 3 verbleibenden</title></circle>
+<line x1="318.3" y1="92" x2="318.3" y2="348" stroke="#5a6b6a" stroke-dasharray="4 4" stroke-opacity="0.65"/>
+<text x="624" y="110" font-size="20" font-weight="700" text-anchor="end" fill="#15302f">ab 9 Versuchen konstant bei 3</text>
+<line x1="96" y1="348" x2="624" y2="348" stroke="#c3cfce" stroke-width="1.5"/>
+<text x="96.0" y="378" font-size="19" text-anchor="middle" fill="#5a6b6a">1</text>
+<text x="207.2" y="378" font-size="19" text-anchor="middle" fill="#5a6b6a">5</text>
+<text x="346.1" y="378" font-size="19" text-anchor="middle" fill="#5a6b6a">10</text>
+<text x="485.1" y="378" font-size="19" text-anchor="middle" fill="#5a6b6a">15</text>
+<text x="624.0" y="378" font-size="19" text-anchor="middle" fill="#5a6b6a">20</text>
+<text x="360" y="414" font-size="20" text-anchor="middle" fill="#15302f">Versuche zu Beginn</text>
+<text x="40" y="458" font-size="19" fill="#5a6b6a">Senkrecht: verbleibende Versuche beim Wechsel.</text>
+</svg>

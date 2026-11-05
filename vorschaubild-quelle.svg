@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" font-family="Segoe UI, system-ui, Arial, sans-serif">
+  <rect width="1200" height="630" fill="#ffffff"/>
+  <rect x="0" y="0" width="1200" height="12" fill="#1a8f8a"/>
+
+  <!-- linke Haelfte: wer und was -->
+  <text x="80" y="190" font-size="60" font-weight="700" fill="#15302f">Von der Neugier</text>
+  <text x="80" y="258" font-size="60" font-weight="700" fill="#15302f">zum Geld.</text>
+
+  <text x="80" y="330" font-size="25" fill="#2c3d3c">Werkzeuge, die aus Wahrscheinlichkeiten</text>
+  <text x="80" y="364" font-size="25" fill="#2c3d3c">konkrete Entscheidungen machen.</text>
+
+  <line x1="80" y1="430" x2="200" y2="430" stroke="#1a8f8a" stroke-width="4"/>
+
+  <text x="80" y="488" font-size="29" font-weight="600" fill="#15302f">Jonas Litmeyer</text>
+  <text x="80" y="524" font-size="22" fill="#5a6b6a">Wirtschaftsinformatiker (B. Sc.)</text>
+
+  <!-- rechte Haelfte: das Ergebnis als zwei Balken -->
+  <text x="740" y="150" font-size="23" font-weight="600" fill="#15302f">Was die richtige Wahl spart</text>
+  <text x="740" y="182" font-size="18" fill="#5a6b6a">1.838 Zusammenstellungen verglichen</text>
+
+  <text x="850" y="350" font-size="27" font-weight="700" text-anchor="middle" fill="#15302f">4,8 Mio.</text>
+  <rect x="790" y="368" width="120" height="136" fill="#1a8f8a" rx="3"/>
+  <text x="850" y="534" font-size="19" text-anchor="middle" fill="#5a6b6a">optimal gewählt</text>
+
+  <text x="1040" y="226" font-size="27" font-weight="700" text-anchor="middle" fill="#15302f">9,2 Mio.</text>
+  <rect x="980" y="244" width="120" height="260" fill="#c2603f" rx="3"/>
+  <text x="1040" y="534" font-size="19" text-anchor="middle" fill="#5a6b6a">mittelmäßig gewählt</text>
+
+  <line x1="740" y1="504" x2="1150" y2="504" stroke="#c3cfce" stroke-width="2"/>
+  <text x="945" y="580" font-size="24" font-weight="600" text-anchor="middle" fill="#15302f">Faktor 1,9 – 4,4 Mio. gespart</text>
+</svg>

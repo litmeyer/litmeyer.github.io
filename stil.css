@@ -1,0 +1,501 @@
+/* ---------------------------------------------------------------
+   Jonas Litmeyer - Portfolio
+   Eine einzelne Stildatei. Keine externen Schriften, keine
+   Analysewerkzeuge, nichts Eingebettetes - es wird nichts an
+   Dritte uebertragen.
+
+   Zum Anpassen: Die Farben stehen unten als Variablen. Alles
+   andere laesst sich gefahrlos ignorieren.
+   --------------------------------------------------------------- */
+
+:root {
+  --tuerkis:     #1a8f8a;   /* Akzentfarbe, wie im Lebenslauf */
+  --tuerkis-tief:#12706c;
+  --tinte:       #15302f;   /* Ueberschriften */
+  --text:        #2c3d3c;   /* Fliesstext */
+  --gedaempft:   #5a6b6a;   /* Nebensaechliches */
+  --linie:       #dde6e5;
+  --flaeche:     #f4f8f7;
+  --weiss:       #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--weiss);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.68;
+  -webkit-font-smoothing: antialiased;
+}
+
+.spalte {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Einstieg ---------- */
+
+.einstieg {
+  background: var(--flaeche);
+  border-bottom: 1px solid var(--linie);
+  padding: 76px 0 60px;
+  margin-bottom: 64px;
+}
+
+h1 {
+  margin: 0 0 20px;
+  font-size: 2.45rem;
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+  color: var(--tinte);
+}
+
+.lead {
+  margin: 0 0 24px;
+  font-size: 1.16rem;
+  line-height: 1.6;
+  color: var(--text);
+  max-width: 62ch;
+}
+
+.name {
+  margin: 0;
+  font-size: 0.94rem;
+  color: var(--gedaempft);
+}
+
+/* ---------- Abschnitte ---------- */
+
+section {
+  margin-bottom: 72px;
+}
+
+.kicker {
+  margin: 0 0 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--tuerkis);
+}
+
+h2 {
+  margin: 0 0 22px;
+  font-size: 1.62rem;
+  line-height: 1.26;
+  letter-spacing: -0.01em;
+  color: var(--tinte);
+}
+
+h3 {
+  margin: 36px 0 12px;
+  font-size: 1.04rem;
+  color: var(--tinte);
+}
+
+p { margin: 0 0 18px; max-width: 68ch; }
+
+strong { color: var(--tinte); }
+
+/* Die Ausgangsfrage jedes Beispiels */
+.frage {
+  border-left: 3px solid var(--tuerkis);
+  padding: 2px 0 2px 20px;
+  font-size: 1.05rem;
+  color: var(--tinte);
+}
+
+/* Der Entwicklungsverlauf im Hauptstueck */
+.verlauf {
+  background: var(--flaeche);
+  border-radius: 6px;
+  padding: 20px 24px;
+  max-width: none;
+}
+
+/* ---------- Kurzfassung ganz oben ----------
+   Die vier Ergebnisse, bevor irgendetwas erklaert wird. Jeder Eintrag
+   springt in den zugehoerigen Abschnitt. */
+
+.ueberblick { margin-bottom: 64px; }
+
+.ergebnisse {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--linie);
+}
+
+.ergebnisse li { border-bottom: 1px solid var(--linie); }
+
+.ergebnisse a {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  padding: 14px 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.ergebnisse a:hover .satz { color: var(--tuerkis-tief); }
+
+.zahl {
+  flex: 0 0 auto;
+  min-width: 5.4em;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--tinte);
+  font-variant-numeric: tabular-nums;
+}
+
+.zahl .mal { font-size: 0.62em; font-weight: 600; }
+
+.zahl .von {
+  display: block;
+  font-size: 0.4em;
+  font-weight: 400;
+  color: var(--gedaempft);
+}
+
+.satz { font-size: 0.96rem; color: var(--text); }
+
+/* ---------- Die Antwort eines Abschnitts ----------
+   Gegenstueck zur Frage, aber bewusst andere Form: Linie oben statt
+   Linie links, damit die beiden nicht wie dasselbe Element aussehen. */
+
+.ergebnis {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 2px solid var(--tuerkis);
+  font-size: 1.05rem;
+  color: var(--tinte);
+}
+
+/* ---------- Tabelle der Qualitaetsstufen ---------- */
+
+.stufen {
+  width: 100%;
+  max-width: 420px;
+  margin: 26px 0;
+  border-collapse: collapse;
+  font-size: 0.94rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.stufen caption {
+  text-align: left;
+  padding-bottom: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--gedaempft);
+}
+
+.stufen th {
+  text-align: right;
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--gedaempft);
+  border-bottom: 1px solid var(--tinte);
+  padding: 0 0 6px;
+}
+
+.stufen td {
+  text-align: right;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--linie);
+}
+
+.stufen th:first-child,
+.stufen td:first-child { text-align: left; }
+
+/* Die Zeile, auf die das Ergebnis hinauslaeuft */
+.stufen .hervor td {
+  font-weight: 700;
+  color: var(--tinte);
+  background: var(--flaeche);
+}
+
+/* ---------- Diagramme ---------- */
+
+figure {
+  margin: 30px 0;
+}
+
+/* Bildunterschrift. Mit der Klasse "davor" steht sie ueber dem Bild -
+   so gewuenscht bei der Heatmap, damit man vor dem Hinsehen weiss,
+   worauf man schaut. */
+figcaption.davor {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+figcaption {
+  margin-top: 10px;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--gedaempft);
+}
+
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--linie);
+  border-radius: 6px;
+  background: var(--weiss);
+}
+
+/* ---------- Knopf zum Werkzeug ----------
+   Der einzige Knopf auf der Seite. Er fuehrt auf myth-optimizer.html,
+   die im selben Ordner liegt. Beim Hochladen oder Verschicken muss diese
+   Datei mit, sonst laeuft der Knopf ins Leere. Wird das Werkzeug neu
+   gebaut, muss die Kopie hier erneuert werden.
+   Die Farben kommen aus den Variablen, damit der Knopf in jedem Entwurf
+   und im Ausdruck von selbst passt. Hintergrund ist die tiefe statt der
+   hellen Akzentfarbe - nur die hat gegen Weiss genug Kontrast. */
+
+.werkzeug-start {
+  margin: 34px 0 0;
+}
+
+a.knopf {
+  display: inline-block;
+  padding: 13px 24px;
+  background: var(--tuerkis-tief);
+  color: var(--weiss);
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a.knopf:hover,
+a.knopf:focus-visible {
+  background: var(--tinte);
+  color: var(--weiss);
+  text-decoration: none;
+}
+
+a.knopf:focus-visible {
+  outline: 2px solid var(--tuerkis);
+  outline-offset: 3px;
+}
+
+.werkzeug-start .hinweis {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--gedaempft);
+}
+
+/* ---------- Code ---------- */
+
+pre {
+  margin: 26px 0;
+  padding: 18px 20px;
+  overflow-x: auto;
+  background: var(--tinte);
+  border-radius: 6px;
+}
+
+code {
+  font-family: ui-monospace, "Cascadia Mono", Consolas, "Liberation Mono", monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #cfe3e1;
+  white-space: pre;
+}
+
+/* ---------- Links ---------- */
+
+a {
+  color: var(--tuerkis-tief);
+  text-underline-offset: 2px;
+}
+a:hover { color: var(--tinte); }
+
+/* ---------- Persoenlich und Kontakt ---------- */
+
+.persoenlich {
+  border-top: 1px solid var(--linie);
+  padding-top: 44px;
+}
+
+.kontakt {
+  border-top: 1px solid var(--linie);
+  padding-top: 44px;
+  padding-bottom: 72px;
+}
+
+.kontakt p:first-of-type {
+  font-size: 1.16rem;
+}
+
+.klein {
+  font-size: 0.88rem;
+  color: var(--gedaempft);
+}
+
+.stand {
+  margin-top: 18px;
+  font-size: 0.82rem;
+}
+
+
+/* ---------- Ankerleiste ---------- */
+
+/* Bleibt beim Scrollen oben stehen. Hoehe: rund 52 px - davon haengt
+   das scroll-margin-top der Abschnitte ab (siehe unten). */
+.anker {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--weiss);
+  border-bottom: 1px solid var(--linie);
+}
+
+.anker-zeile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  height: 52px;
+}
+
+.anker-name {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--tinte);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.anker-liste {
+  display: flex;
+  justify-content: flex-end;
+  gap: clamp(12px, 2.4vw, 24px);   /* waechst und schrumpft mit dem Fenster */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.anker-liste a {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--gedaempft);
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.anker-liste a:hover {
+  color: var(--tuerkis-tief);
+  border-bottom-color: var(--tuerkis);
+}
+
+/* Der zuletzt angeklickte Eintrag bleibt markiert.
+   Funktioniert ohne JavaScript: der Klick setzt die Adresse auf #name,
+   damit wird der Abschnitt zu ":target", und :has() faerbt den passenden
+   Eintrag in der Leiste ein.
+   Neuer Eintrag in der Leiste: hier eine Zeile nach demselben Muster. */
+body:has(#absicherung:target) .anker-liste a[href="#absicherung"],
+body:has(#mindestkosten:target) .anker-liste a[href="#mindestkosten"],
+body:has(#wechsel:target) .anker-liste a[href="#wechsel"],
+body:has(#werkzeug:target) .anker-liste a[href="#werkzeug"],
+body:has(#kontakt:target) .anker-liste a[href="#kontakt"] {
+  color: var(--tuerkis-tief);
+  border-bottom-color: var(--tuerkis);
+}
+
+/* Sprungziele nicht unter die Leiste rutschen lassen */
+:target,
+section[id],
+header[id] {
+  scroll-margin-top: 68px;
+}
+
+/* Weiches Scrollen, aber nicht gegen den Willen des Nutzers */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* Sichtbarer Fokus fuer Tastaturbedienung */
+a:focus-visible {
+  outline: 2px solid var(--tuerkis);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- Schmale Bildschirme ---------- */
+
+@media (max-width: 620px) {
+  body { font-size: 16px; }
+  .einstieg { padding: 52px 0 42px; margin-bottom: 48px; }
+  h1 { font-size: 1.95rem; }
+  h2 { font-size: 1.36rem; }
+  .lead { font-size: 1.06rem; }
+  section { margin-bottom: 56px; }
+  .verlauf { padding: 16px 18px; }
+  .ergebnisse a { flex-direction: column; gap: 2px; }
+  .zahl { min-width: 0; font-size: 1.4rem; }
+  .anker-name { display: none; }          /* Platz fuer die Eintraege */
+  .anker-zeile { height: 48px; justify-content: stretch; }
+  .anker-liste { flex: 1; justify-content: space-between; }
+  .anker-liste a { font-size: 0.82rem; }
+  section[id], header[id] { scroll-margin-top: 60px; }
+}
+
+
+/* ---------- Sehr schmale Bildschirme: Leiste bricht um ----------
+   Unterhalb dieser Breite passen die fuenf Eintraege nicht mehr in eine Reihe.
+   Das Raster teilt sie gleichmaessig auf drei Spalten auf - bei fuenf
+   Eintraegen also eine Zeile zu drei und eine zu zwei. Es entsteht nie
+   eine Scrollbar.
+
+   Die Spaltenzahl gehoert zur Anzahl der Eintraege: bei vier Eintraegen
+   waeren zwei Spalten richtig (2 + 2), bei fuenf oder sechs drei. Wer
+   einen Eintrag ergaenzt oder streicht, passt die naechste Zeile an. */
+@media (max-width: 520px) {
+  .anker-zeile {
+    height: auto;
+    padding: 8px 16px;                    /* schmalerer Rand nur fuer die Leiste */
+  }
+  .anker-liste {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px clamp(6px, 2.5vw, 14px);
+    width: 100%;
+  }
+  /* Eintrag mittig in seiner Spalte, aber der Unterstrich soll nur so
+     breit sein wie das Wort - deshalb inline-block statt block. */
+  .anker-liste li { text-align: center; }
+  .anker-liste a { display: inline-block; }
+  /* Die Schrift schrumpft mit dem Fenster, damit auch das laengste Wort
+     ("Mindestkosten") auf 320 px noch in seine Spalte passt. Ohne das
+     laeuft die Leiste ueber und bekaeme eine eigene Scrollbar. */
+  .anker-liste a { font-size: clamp(0.74rem, 3.3vw, 0.82rem); }
+  section[id], header[id] { scroll-margin-top: 94px; }
+}
+
+/* ---------- Druck ---------- */
+
+@media print {
+  /* Leiste wird mitgedruckt, aber nicht klebend - sonst stuende sie
+     auf jeder Seite erneut. */
+  .anker { position: static; }
+  .einstieg { background: none; padding-top: 0; }
+  pre { background: none; border: 1px solid var(--linie); }
+  code { color: var(--text); }
+  section { page-break-inside: avoid; }
+}

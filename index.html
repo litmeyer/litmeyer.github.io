@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jonas Litmeyer – Datenanalyse und Simulation</title>
+<meta name="description" content="Werkzeuge, die aus Wahrscheinlichkeiten konkrete Entscheidungen machen. Fünf Fallbeispiele aus eigener Entwicklung.">
+<!-- Die Seite soll NICHT über Google gefunden werden, sondern nur über
+     den Link in Bewerbungen. Wichtig: robots.txt darf das Einlesen NICHT
+     verbieten - sonst liest die Suchmaschine diese Zeile hier gar nicht
+     und nimmt die Adresse trotzdem auf, wenn sie anderswo verlinkt ist. -->
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="stil-f.css" id="seitenstil">
+
+<!-- =====================================================================
+     LINK-VORSCHAU
+     Hiervon haengt ab, wie die Seite aussieht, wenn jemand den Link in
+     Mail, Slack, Teams, WhatsApp oder LinkedIn weitergibt.
+
+     >>> WICHTIG: Sobald die Domain feststeht, hier beide Adressen
+     >>> anpassen. Eine relative Angabe genuegt den meisten Diensten
+     >>> nicht - es muss die vollstaendige Adresse sein.
+     ===================================================================== -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Jonas Litmeyer">
+<meta property="og:title" content="Von der Neugier zum Geld.">
+<meta property="og:description" content="Werkzeuge, die aus Wahrscheinlichkeiten konkrete Entscheidungen machen. Fünf Fallbeispiele aus eigener Entwicklung.">
+<meta property="og:url" content="https://jonas-litmeyer.de/">
+<meta property="og:image" content="https://jonas-litmeyer.de/vorschaubild.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Zwei Balken im Vergleich: optimal gewaehlt 4,8 Millionen, mittelmaessig gewaehlt 9,2 Millionen.">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<!-- =====================================================================
+     ANKERLEISTE - bleibt beim Scrollen oben stehen.
+     Die Eintraege zeigen auf die id="..." der jeweiligen Abschnitte.
+     Neuer Eintrag: hier eine Zeile ergaenzen, beim Abschnitt eine id setzen.
+     ===================================================================== -->
+<nav class="anker" aria-label="Abschnitte dieser Seite">
+  <div class="spalte anker-zeile">
+    <a class="anker-name" href="#oben">Jonas Litmeyer</a>
+    <ul class="anker-liste">
+      <li><a href="#absicherung">Absicherung</a></li>
+      <li><a href="#mindestkosten">Mindestkosten</a></li>
+      <li><a href="#werkzeug">Werkzeug</a></li>
+      <li><a href="#wechsel">Wechselpunkt</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- =====================================================================
+     EINSTIEG
+     ===================================================================== -->
+<header class="einstieg" id="oben">
+  <div class="spalte">
+    <h1>Von der Neugier zum Geld.</h1>
+    <p class="lead">
+      Ich baue Werkzeuge, die aus Wahrscheinlichkeiten konkrete Entscheidungen machen.
+      Angefangen habe ich in <strong>Cabal Online</strong>, weil ich wissen wollte, was
+      zusätzliches Wissen dort wert ist. Die Antwort war: verdammt viel.
+    </p>
+    <p class="name">Jonas Litmeyer &middot; Wirtschaftsinformatiker (B.&nbsp;Sc.)</p>
+  </div>
+</header>
+
+<main class="spalte">
+
+<!-- =====================================================================
+     KURZFASSUNG - die vier Ergebnisse, bevor irgendetwas erklärt wird.
+     Die Zahlen stehen weiter unten im jeweiligen Abschnitt noch einmal.
+     ===================================================================== -->
+<section class="ueberblick" aria-label="Die Ergebnisse auf einen Blick">
+  <ol class="ergebnisse">
+    <li>
+      <a href="#absicherung">
+        <span class="zahl">3,5<span class="mal">×</span></span>
+        <span class="satz">liegen zwischen der teuersten und der günstigsten Strategie</span>
+      </a>
+    </li>
+    <li>
+      <a href="#zusammenstellung">
+        <span class="zahl">1.825<span class="von">von 1.838</span></span>
+        <span class="satz">so weit hinten landet, wer einfach die besten Cores nimmt</span>
+      </a>
+    </li>
+    <li>
+      <a href="#mindestkosten">
+        <span class="zahl">0,9<span class="mal">%</span></span>
+        <span class="satz">der Myth Points bringen drei Viertel der Holy Power</span>
+      </a>
+    </li>
+    <li>
+      <a href="#werkzeug">
+        <span class="zahl">2,9<span class="mal">×</span></span>
+        <span class="satz">so teuer ist die zweite Hälfte der Schadenssteigerung wie die erste</span>
+      </a>
+    </li>
+    <li>
+      <a href="#wechsel">
+        <span class="zahl">3</span>
+        <span class="satz">Bälle vor Schluss wechselt man die Beere – egal, mit wie vielen man startet</span>
+      </a>
+    </li>
+  </ol>
+</section>
+
+<!-- =====================================================================
+     PERSÖNLICHER EINSTIEG
+     ===================================================================== -->
+<section class="warum" id="warum">
+  <h2>Warum ich so etwas baue</h2>
+
+  <p>
+    Weil mich interessiert, was hinter einer Zahl steckt. Wenn ich eine Entscheidung treffen soll
+    und niemand sagen kann, welche Option die bessere ist, baue ich mir das Werkzeug, das es
+    ausrechnet.
+  </p>
+
+  <p>
+    Vier der fünf Beispiele stammen aus <strong>Cabal Online</strong>, einem MMORPG, eines aus
+    <strong>Pokémon&nbsp;GO</strong>. Spiele sind dafür das ideale Übungsfeld: Alle
+    Wahrscheinlichkeiten und Preise sind messbar, jede Strategie lässt sich beliebig oft
+    durchrechnen, und was zusätzliches Wissen wert ist, lässt sich auf die Spielwährung genau
+    beziffern. Die Methode dahinter ist dieselbe, egal ob es um Alz, Instandhaltung oder ein
+    Investitionsbudget geht.
+  </p>
+
+  <p class="klein">
+    Fünf Beispiele, jeweils mit der Frage dahinter, dem Vorgehen und dem Ergebnis. Die ersten
+    vier sind Programme, die eine Zahl ausrechnen. Das letzte ist daraus geworden: ein
+    Werkzeug, das jemand anders bedient.
+  </p>
+</section>
+
+<!-- =====================================================================
+     HAUPTSTÜCK
+     ===================================================================== -->
+<section id="absicherung">
+  <p class="kicker">Hauptbeispiel</p>
+  <h2>Ab wann lohnt sich eine Absicherung?</h2>
+
+  <p class="frage">
+    In Cabal Online lässt sich Ausrüstung aufwerten: Ein Schwert geht von <strong>+0</strong>
+    bis <strong>+20</strong>, jede Stufe macht es stärker. Jeder Versuch verbraucht Material und
+    gelingt nur mit einer bestimmten Wahrscheinlichkeit – je höher die Stufe, desto
+    unwahrscheinlicher. Misslingt er, fällt das Stück ein oder zwei Stufen zurück: aus +7 wird
+    +6 oder +5. In diesem Beispiel ist <strong>+10</strong> das Ziel.
+  </p>
+
+  <p class="frage">
+    Im Auktionshaus gibt es zwei Hilfsmittel. Ein <strong>Safeguard</strong> (9.388&nbsp;Alz)
+    verhindert den Rückfall; bezahlt wird er nur, wenn tatsächlich einer eingetreten wäre. Ein
+    <strong>Erfolgsbooster</strong> (im Spiel „Potion of Enhancement", 7.444&nbsp;Alz) hebt die
+    Erfolgschance um 14,2&nbsp;Prozentpunkte und
+    wird bei jedem Versuch fällig, auch bei den misslungenen.
+    <strong>Ab welcher Stufe lohnt sich welches?</strong>
+  </p>
+
+  <p>
+    Dieselbe Frage stellt sich in der Instandhaltung, bei Versicherungen und bei jeder
+    Investition mit unsicherem Ausgang.
+  </p>
+
+  <h3>Vorgehen</h3>
+  <p>
+    Beide Hilfsmittel lassen sich ab einer frei wählbaren Stufe einsetzen – etwa „Safeguard
+    erst ab +6“. Für jedes gibt es elf solcher Schwellen, von „ab +0“ bis „nie“. Zusammen sind
+    das <strong>121 Strategien</strong>. Ich habe jede einzelne mit einer Monte-Carlo-Simulation
+    über 50.000 Durchläufe bewertet. Zielgröße sind die erwarteten Gesamtkosten in Alz, um ein
+    Schwert von +0 auf +10 zu bringen.
+  </p>
+
+  <figure>
+    <figcaption class="davor">
+      <strong>So liest man das Bild:</strong> Jedes Feld ist eine der 121 Strategien – waagerecht,
+      ab welcher Stufe ein Erfolgsbooster eingesetzt wird, senkrecht dasselbe für den Safeguard. Die Farbe
+      sind die erwarteten Gesamtkosten: <strong>hell ist günstig, dunkel ist teuer.</strong>
+      Gesucht ist das hellste Feld.
+    </figcaption>
+    <img src="heatmap-aufwertungskosten.svg" alt="Heatmap der erwarteten Gesamtkosten für alle 121 Strategien. Am günstigsten ist Safeguard ab +9 ohne Erfolgsbooster, 42.657 Alz.">
+  </figure>
+
+  <h3>Ergebnis</h3>
+  <p class="ergebnis">
+    Die teuerste Strategie kostet das <strong>3,5-fache der günstigsten</strong>. Am günstigsten
+    fährt, wer den <strong>Safeguard ab +9</strong> einsetzt und auf Erfolgsbooster ganz verzichtet.
+  </p>
+
+  <p>
+    Der Grund liegt darin, <em>wann</em> die beiden bezahlt werden. Der Safeguard kostet nur,
+    wenn tatsächlich ein Rückfall eingetreten wäre – und was er verhindert, wird mit jeder Stufe
+    wertvoller: Ein Sturz von +9 auf +7 bedeutet, zwei teure Stufen noch einmal zu machen.
+    Sein Preis bleibt gleich, sein Nutzen wächst. Daraus wird eine Schwelle.
+  </p>
+
+  <p>
+    Der Erfolgsbooster dagegen wird bei jedem Versuch fällig, auch bei denen, die ohnehin gelungen wären.
+    Bei durchschnittlich 21 Versuchen bis +10 summiert sich das schneller, als die höhere
+    Erfolgschance einspart. Die Fläche zeigt außerdem, wie flach das Optimum ist – rund um
+    den besten Punkt ändert sich wenig, weit davon entfernt sehr viel.
+  </p>
+
+  <h3 id="zusammenstellung">Ein zweites Beispiel: eine ganz andere Aufwertung</h3>
+
+  <p>
+    Bis hierhin ging es um eine einzige Stufenleiter: +0 bis +20. Cabal hat daneben das
+    <strong>Extreme Upgrade</strong> – eine zweite Aufwertung, die mit der ersten nichts zu tun
+    hat: eigene Stufen, eigenes Material, eigene Regeln. Ein Schwert kann in der einen weit oben
+    und in der anderen ganz unten stehen. Gleich ist nur das Vorgehen: alle Möglichkeiten
+    aufzählen, jede mit ihren erwarteten Kosten bewerten, die günstigste nehmen.
+  </p>
+
+  <p class="frage">
+    Das Extreme Upgrade hat sieben Stufen, und jede verbraucht <strong>Extreme Cores</strong>.
+    Für die unteren Stufen zwei, vier oder sechs, ab der fünften jeweils <strong>zehn</strong>.
+    Jeder Core hat eine von zwölf Stufen, Lv1 bis Lv12, mit eigener Stärke und eigenem
+    Marktpreis. Die <strong>Summe der Stärken</strong> bestimmt die Erfolgschance – unter 360
+    ist ein Versuch gar nicht erst möglich. Misslingt er, wird das Schwert beschädigt; ein
+    Reparaturbausatz behebt das mit 50&nbsp;Prozent Wahrscheinlichkeit.
+    <strong>Welche zehn Cores sind zusammen am günstigsten?</strong>
+  </p>
+
+  <table class="stufen">
+    <caption>Die zwölf Core-Stufen</caption>
+    <thead>
+      <tr><th scope="col">Stufe</th><th scope="col">Stärke</th><th scope="col">Preis in Alz</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>1</td><td>1.000</td></tr>
+      <tr><td>2</td><td>2</td><td>800</td></tr>
+      <tr><td>3</td><td>3</td><td>843</td></tr>
+      <tr><td>4</td><td>4</td><td>500</td></tr>
+      <tr><td>5</td><td>8</td><td>7.888</td></tr>
+      <tr><td>6</td><td>10</td><td>122</td></tr>
+      <tr><td>7</td><td>12</td><td>139</td></tr>
+      <tr><td>8</td><td>20</td><td>4.000</td></tr>
+      <tr><td>9</td><td>24</td><td>12.000</td></tr>
+      <tr class="hervor"><td>10</td><td>36</td><td>23.500</td></tr>
+      <tr><td>11</td><td>42</td><td>53.000</td></tr>
+      <tr><td>12</td><td>48</td><td>83.000</td></tr>
+    </tbody>
+  </table>
+
+  <p>
+    Schon an dieser Tabelle sieht man, warum Rechnen hier etwas bringt: <strong>Die Preise
+    kommen aus dem Auktionshaus und folgen der Stärke nicht.</strong> Lv5 ist schwächer als Lv6
+    und kostet trotzdem das 65-fache. Wer nach Gefühl einkauft, hat keine Chance.
+  </p>
+
+  <p>
+    Aus zwölf Core-Stufen lassen sich zehn Cores auf <strong>352.716</strong> Arten
+    zusammenstellen. Davon erreichen nur <strong>1.838</strong> die Mindeststärke von 360 und
+    sind überhaupt zulässig. Eine Simulation braucht es dafür nicht: Der Erwartungswert lässt
+    sich geschlossen berechnen, und 352.716 Fälle lassen sich vollständig durchzählen.
+  </p>
+
+<pre><code>// Erwartete Gesamtkosten bis zum ersten Erfolg.
+// p  = Erfolgschance dieser Zusammenstellung
+// attemptCost = Gebuehr plus Preis der zehn Cores
+// repairKitPrice / REPAIR_SUCCESS_PROB = erwartete Reparaturkosten
+//   je Fehlschlag, weil ein Bausatz nur mit 50 % wirkt
+double expectedRepairCost = repairKitPrice / REPAIR_SUCCESS_PROB;
+return (attemptCost + (1.0 - p) * expectedRepairCost) / p;</code></pre>
+
+  <figure>
+    <img src="diagramm-beste-wahl.svg" alt="Balkenvergleich: optimale Zusammenstellung 4,8 Millionen gegenüber zehnmal Stufe 12 mit 11,0 Millionen.">
+  </figure>
+
+  <p>
+    Das Ergebnis widerspricht dem Reflex. Gewonnen hat nicht die stärkste Zusammenstellung,
+    sondern die billigste, die die Schwelle <strong>gerade so</strong> erreicht: zehnmal
+    Stufe 10, also zehnmal Stärke 36 – zusammen genau 360. Wer stattdessen das Naheliegende
+    tut und die besten Gegenstände nimmt, zehnmal Stufe 12, landet auf
+    <strong>Platz 1.825 von 1.838</strong> und zahlt das 2,3-fache.
+  </p>
+
+  <p class="ergebnis">
+    Stärke über der Schwelle erhöht die Erfolgschance nur wenig und kostet überproportional.
+    Die billigste Zusammenstellung ist die, die die Schwelle <strong>gerade so</strong> erreicht.
+  </p>
+
+  <h3>Wie das gewachsen ist</h3>
+  <p class="verlauf">
+    Das Werkzeug ist nicht an einem Abend entstanden. Im November 2024 beantwortete die erste
+    Fassung nur eine einfache Frage: wie viel Material brauche ich im Schnitt? Im Mai 2026 kam
+    die Geldfrage dazu – was kostet mich das eigentlich? Und im August 2026 die eigentliche:
+    welche Strategie ist die günstigste? Die heutige Fassung beantwortet dieselbe Frage auf zwei
+    Wegen, simulativ oder analytisch, je nachdem ob sich der Zustandsraum geschlossen berechnen
+    lässt. Die Entscheidung, wann welcher Weg der richtige ist, war der eigentliche Lernschritt.
+  </p>
+</section>
+
+<!-- =====================================================================
+     KURZPROFIL 1
+     ===================================================================== -->
+<section id="mindestkosten">
+  <p class="kicker">Kurz vorgestellt</p>
+  <h2>Wie erreicht man ein Ziel mit den geringsten Kosten?</h2>
+
+  <p class="frage">
+    Cabal hat ein zweites Ausbausystem, das <strong>Myth-System</strong>: <strong>78 Nodes</strong>,
+    die unabhängig voneinander belegt werden können. Jede Belegung bringt
+    <strong>Holy Power</strong> und kostet <strong>Myth Points</strong> – eine eigene Währung
+    dieses Systems. Man verdient sie, indem man die Spielfigur zurücksetzt und wieder
+    hochspielt – eine solche <strong>Wiedergeburt</strong> bringt insgesamt gut 370 davon,
+    allerdings nicht auf einen Schlag, sondern nach und nach. Der Preis ist dabei selbst ein Erwartungswert, denn die Belegung wird
+    erwürfelt – man zahlt so lange, bis sie sitzt. Eine Ziel-Holy-Power ist vorgegeben.
+    <strong>Welche Belegung der 78 Nodes ist die billigste?</strong>
+  </p>
+
+  <p>
+    Ein klassisches Budgetproblem – nur dass die Daten aus der Praxis kommen und nicht aus einer
+    Übungsaufgabe: eine Tabelle mit <strong>2.840 Zeilen</strong>, deutschen Zahlformaten,
+    wechselnden Trennzeichen und unvollständigen Zeilen, die das Programm abfangen muss.
+  </p>
+
+  <p>
+    Ich sortiere alle Möglichkeiten nach <strong>Holy Power je Myth Point</strong> und arbeite sie
+    von oben nach unten ab. Ein Node wird nur dann neu belegt, wenn die neue Zeile mehr Holy
+    Power bringt als die bisherige; sobald das Ziel erreicht ist, bricht das Programm ab. Das
+    ist ein Greedy-Verfahren – es garantiert nicht das theoretische Optimum, aber es liefert
+    genau die Kurve, auf die es hier ankommt.
+  </p>
+
+  <figure>
+    <img src="diagramm-kosten-nutzen.svg" alt="Kurve der kumulierten Kosten über den erreichten Nutzen. Bis 75 Prozent des Nutzens bleibt die Kurve flach, danach steigt sie steil an.">
+    <figcaption>
+      <strong>So liest man das Bild:</strong> Nach rechts wächst die erreichte Holy Power, nach
+      oben die bis dahin ausgegebene Summe. Jeder Punkt auf der Kurve ist ein Schritt – ein
+      Node mehr.
+    </figcaption>
+  </figure>
+
+  <p>
+    Der Testlauf: Ziel 27.500 Holy Power, erreicht nach 545 Schritten mit 27.608 für knapp
+    26 Millionen Myth Points. Das Ergebnis ist eindeutiger, als ich erwartet hatte.
+  </p>
+
+  <p class="ergebnis">
+    <strong>75 Prozent der Holy Power kosten 0,9 Prozent des Aufwands.</strong> Die letzten
+    zehn Prozent kosten 83 Prozent. Wer nicht weiß, wo diese Kante liegt, steckt fast alles in
+    den kleinsten Teil des Ergebnisses.
+  </p>
+
+  <p>
+    Die 26 Millionen wären übrigens rund <strong>70.000 Wiedergeburten</strong> – dieses Ziel
+    erreicht niemand. Genau das ist der Wert der Kurve: Sie sagt einem nicht nur, wie man
+    hinkommt, sondern auch, wo man vernünftigerweise aufhört.
+  </p>
+</section>
+
+<!-- =====================================================================
+     DARAUS GEWORDEN - der Myth-Optimizer
+     Steht bewusst direkt hinter "Mindestkosten": es ist dasselbe
+     Myth-System, nur zu Ende gedacht.
+     ===================================================================== -->
+<section id="werkzeug">
+  <p class="kicker">Daraus geworden</p>
+  <h2>Ein Werkzeug, das jemand anders bedient</h2>
+
+  <p>
+    Das Programm von eben beantwortet seine Frage einmal und für alle gleich: Wie verläuft die
+    Kurve? Die Frage eines Spielers ist eine andere – <strong>ich stehe hier, ich will dorthin,
+    wie weit gehe ich?</strong> Dafür genügt kein Programm, das eine Zahl ausgibt. Dafür
+    braucht es etwas, das man bedienen kann.
+  </p>
+
+  <p class="frage">
+    Für dasselbe Myth-System gibt es auf
+    <a href="https://nipperlug.com/myth-level-planner" rel="noopener">nipperlug.com</a> bereits
+    einen Planer, und der ist gut. Er kennt aber nur die beiden Ränder: den billigsten Weg zu
+    einem Rang, und das Maximum ohne Rücksicht auf den Preis. Was ein Spieler wissen will,
+    liegt dazwischen und lautet anders.
+    <strong>Was bringt mir der nächste Aufwand eigentlich noch?</strong>
+  </p>
+
+  <p>
+    „Aufwand“ heißt dabei <strong>Wiedergeburten</strong> – man setzt die Spielfigur zurück und
+    spielt sie wieder hoch, und das bringt Myth Points. Das ist die Größe, in der ein Spieler
+    wirklich rechnet, denn sie kostet Lebenszeit. Und „Nutzen“ heißt nicht mehr Holy Power,
+    sondern <strong>Schaden</strong>: Wer einmal einträgt, was ihm ein Punkt jedes
+    Angriffswertes wert ist, bekommt von da an Pläne, die auf Schaden hin optimiert sind und
+    nicht auf eine Hilfsgröße.
+  </p>
+
+  <h3>Vorgehen</h3>
+  <p>
+    Die Grundlage ist dynamische Programmierung über alle 78 Nodes. Für den Schaden reicht sie
+    allein aber nicht. Anders als eine Anzahl ist Schaden eine stetige Größe – man müsste ihn
+    in Stufen runden, und dieser Rundungsfehler summiert sich über 78 Nodes auf; bei 1.500
+    Stufen lag er am steilen Ende der Kurve noch bei mehreren Prozent. Das Werkzeug rechnet
+    deshalb in zwei Schritten: Erst spannt ein Lagrange-Multiplikator die Kurve grob auf, dann
+    sucht ein exaktes Verfahren zwischen benachbarten Punkten nach. Gegen eine exakte
+    Vergleichsrechnung gemessen bleibt der mittlere Fehler bei <strong>0,2 bis 0,5
+    Prozent</strong>.
+  </p>
+
+  <figure>
+    <figcaption class="davor">
+      <strong>So liest man das Bild:</strong> Nach rechts der Aufwand in Wiedergeburten, nach
+      oben der Schaden, den der beste Plan dafür erreicht. Ganz links der Punkt, an dem der
+      Rang gerade eben erreicht ist.
+    </figcaption>
+    <img src="diagramm-aufwand.svg" alt="Kurve des erreichbaren Schadens über der Anzahl Wiedergeburten für den Rang Uriel. Sie steigt zunächst steil und flacht dann deutlich ab.">
+  </figure>
+
+  <p>
+    Das Beispiel: Rang <strong>Uriel</strong>, von null gestartet. Ihn überhaupt zu erreichen
+    kostet rund <strong>650 Wiedergeburten</strong>. Alles herauszuholen, was das System
+    hergibt, kostet <strong>1.963</strong> – das Dreifache.
+  </p>
+
+  <p class="ergebnis">
+    Dazwischen verläuft die Kurve sehr ungleich. <strong>Die halbe Steigerung ist schon nach
+    985 Wiedergeburten erreicht.</strong> Die zweite Hälfte kostet noch einmal knapp 1.000 –
+    fast dreimal so viel wie die erste. Wo man aussteigt, kann das Werkzeug niemandem abnehmen.
+    Aber es sagt einem, was die Entscheidung kostet.
+  </p>
+
+  <p>
+    Bei null anfangen muss dabei niemand. Wer einträgt, was auf seinen Nodes heute schon steht,
+    bekommt nicht den theoretischen Gesamtpreis, sondern den <strong>Restaufwand</strong> von
+    genau diesem Punkt aus – und die Reihenfolge, in der es sich am meisten lohnt.
+  </p>
+
+  <h3>Was daraus geworden ist</h3>
+  <p>
+    Eine einzelne HTML-Datei, die offline im Browser läuft: keine Installation, kein Server,
+    keine Datenübertragung. Von außen nachprüfbar sind nur die beiden Ränder des bestehenden
+    Planers – und die stimmen <strong>auf den Punkt genau</strong>: 9.974 und 151.566.667 Myth
+    Points, beide reproduziert das Werkzeug exakt. Daran habe ich es gemessen; alles dazwischen
+    gab es vorher nicht.
+  </p>
+
+  <p>
+    Bedienen lässt es sich auf Deutsch und Englisch – Englisch, weil ich es dem Betreiber von
+    nipperlug.com gegeben habe und der kein Deutsch spricht.
+  </p>
+
+  <!-- Die Datei myth-optimizer.html liegt im selben Ordner. Sie ist eine
+       Kopie aus dem Projektordner und muss beim Verschicken oder Hochladen
+       mit, sonst fuehrt der Knopf ins Leere.
+       Das ?lang=de laesst das Werkzeug auf Deutsch starten; von Haus aus
+       startet es auf Englisch. -->
+  <p class="werkzeug-start">
+    <a class="knopf" href="myth-optimizer.html?lang=de" target="_blank" rel="noopener">Werkzeug öffnen</a>
+    <span class="hinweis">
+      Öffnet in einem neuen Tab. Eine einzige Datei, rund 552&nbsp;KB, ohne Installation und
+      ohne Anmeldung – was man einträgt, bleibt im eigenen Browser.
+    </span>
+  </p>
+</section>
+
+<!-- =====================================================================
+     KURZPROFIL 2
+     ===================================================================== -->
+<section id="wechsel">
+  <p class="kicker">Kurz vorgestellt</p>
+  <h2>Wann tauscht man Ertrag gegen Sicherheit?</h2>
+
+  <p class="frage">
+    In <strong>Pokémon&nbsp;GO</strong> fängt man ein Pokémon mit höchstens
+    <strong>zwanzig Bällen</strong>. Der erste Treffer beendet den Fang – bricht es bis zum
+    letzten Ball aus, geht man ohne Bonbons nach Hause. Vor jedem Wurf darf man eine Beere
+    einsetzen, und die beiden guten unterscheiden sich darin, was sie verbessern.
+    <strong>Wann sollte man wechseln?</strong>
+  </p>
+
+  <table class="stufen">
+    <caption>Die beiden Beeren</caption>
+    <thead>
+      <tr><th scope="col">Beere</th><th scope="col">Fangchance</th><th scope="col">Bonbons</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Silberne Sananabeere</td><td>× 1,8</td><td>× 2,33</td></tr>
+      <tr><td>Goldene Himmihbeere</td><td>× 2,5</td><td>× 1</td></tr>
+    </tbody>
+  </table>
+
+  <p>
+    Am Anfang lohnt die Silberne: Es sind noch viele Bälle übrig, ein Ausbruch kostet wenig.
+    Gegen Ende lohnt die Goldene, weil ein Ausbruch dann endgültig ist – und null Bonbons sind
+    schlechter als wenige. Irgendwo dazwischen liegt der Wechsel, die Frage ist, wo genau.
+  </p>
+
+  <p>
+    Zwei Größen hängen dabei zusammen: Je mehr Bälle man zu Beginn hat, desto später könnte der
+    Wechsel sinnvoll sein. Ich habe deshalb für jede Ballzahl von 1 bis 20 jeden möglichen
+    Wechselzeitpunkt durchgerechnet, eine Million Durchläufe je Punkt. Insgesamt
+    <strong>210 Millionen simulierte Fänge</strong>, Rechenzeit 34 Sekunden.
+  </p>
+
+  <figure>
+    <img src="diagramm-wechselzeitpunkt.svg" alt="Linie des optimalen Wechselzeitpunkts über der Startanzahl. Ab neun Versuchen verläuft sie konstant bei drei.">
+  </figure>
+
+  <p class="ergebnis">
+    Man würde erwarten, dass der beste Zeitpunkt mit der Ballzahl mitwächst. Er tut es nicht.
+    <strong>Ab neun Bällen liegt er konstant bei drei verbleibenden</strong> – egal ob man mit
+    neun oder mit zwanzig startet. Nur bei sehr wenigen Bällen kippt das Bild: Dann wird fast
+    sofort gewechselt, weil die Gesamtchance ohnehin gering ist und jeder Ausbruch sofort
+    schwer wiegt.
+  </p>
+</section>
+
+<!-- =====================================================================
+     AUSSERHALB MEINES RECHNERS
+     ===================================================================== -->
+<section class="persoenlich" id="ausserhalb">
+  <h2>Außerhalb meines Rechners</h2>
+
+  <p>
+    Dass diese Art von Werkzeug gebraucht wird, sieht man nicht nur bei mir:
+    Auf <a href="https://nipperlug.com" rel="noopener">nipperlug.com</a> gibt es Planer,
+    Datenbanken und Kalkulatoren derselben Art – öffentlich, gepflegt, mit echten Nutzern.
+    Ich bin dort in der Community aktiv, und die Funktion „Compare Upgrades“ im dortigen
+    Schadensrechner geht auf mein Konzept zurück: Sie sortiert mögliche Verbesserungen nach
+    Kosteneffizienz statt nach Wirkung allein. Umgesetzt hat sie der Betreiber der Seite, die
+    Namensnennung steht dort.
+  </p>
+</section>
+
+<!-- =====================================================================
+     KONTAKT
+     ===================================================================== -->
+<section class="kontakt" id="kontakt">
+  <h2>Kontakt</h2>
+  <p>
+    <a href="mailto:j.litmeyer1@web.de">j.litmeyer1@web.de</a>
+  </p>
+  <p class="klein">
+    Alle gezeigten Auswertungen stammen aus eigenen Programmen in Java und Excel, die Daten
+    aus Cabal Online und Pokémon&nbsp;GO.
+    Die Diagramme sind aus deren Ausgaben erzeugt.
+  </p>
+  <!-- Beim Überarbeiten der Seite bitte mitziehen. -->
+  <p class="klein stand">Stand: Oktober 2026</p>
+</section>
+
+</main>
+
+<!-- ####################################################################
+     ### NUR ZUM VERGLEICHEN - VOR DEM HOCHLADEN ENTFERNEN            ###
+     ###                                                              ###
+     ### Gewaehlt ist Entwurf F - die Seite startet damit.            ###
+     ###                                                              ###
+     ### Zum Aufraeumen vor dem Hochladen:                            ###
+     ###   1. stil-f.css in stil.css umbenennen (die alte stil.css    ###
+     ###      vorher loeschen - das ist Entwurf A)                    ###
+     ###   2. im Kopf wieder href="stil.css" eintragen und das        ###
+     ###      id="seitenstil" an derselben Zeile entfernen            ###
+     ###   3. die uebrigen Entwuerfe stil-b.css bis stil-e.css weg    ###
+     ###   4. diesen ganzen Block bis zur Endmarke weiter unten weg   ###
+     ###                                                              ###
+     ### myth-optimizer.html gehoert dazu und muss mit hochgeladen    ###
+     ### werden - sonst fuehrt der Knopf im Werkzeug-Abschnitt ins    ###
+     ### Leere.                                                       ###
+     #################################################################### -->
+<style>
+  /* Eigene Farben, damit der Umschalter in jedem Entwurf gleich aussieht. */
+  #designwahl {
+    position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%);
+    z-index: 999; display: flex; flex-wrap: wrap; align-items: center;
+    gap: 6px; max-width: calc(100vw - 24px);
+    padding: 8px 12px; border-radius: 10px;
+    background: #10211f; box-shadow: 0 6px 24px rgba(0,0,0,.28);
+    font-family: system-ui, Segoe UI, Arial, sans-serif; font-size: 13px;
+  }
+  #designwahl .hinweis { color: #8fa6a3; margin-right: 4px; white-space: nowrap; }
+  #designwahl button {
+    font: inherit; cursor: pointer; white-space: nowrap;
+    padding: 6px 11px; border-radius: 6px;
+    border: 1px solid #2f4a47; background: #17302d; color: #d6e4e2;
+  }
+  #designwahl button:hover { border-color: #4fb3ad; }
+  #designwahl button[aria-pressed="true"] { background: #1a8f8a; border-color: #1a8f8a; color: #fff; }
+  @media (max-width: 620px) { #designwahl { font-size: 12px; bottom: 10px; } }
+  @media print { #designwahl { display: none; } }
+</style>
+
+<div id="designwahl" role="group" aria-label="Entwurf auswählen">
+  <span class="hinweis">Entwurf:</span>
+  <button data-stil="stil.css">A&nbsp;· Lebenslauf</button>
+  <button data-stil="stil-b.css">B&nbsp;· Dunkel</button>
+  <button data-stil="stil-c.css">C&nbsp;· Redaktionell</button>
+  <button data-stil="stil-d.css">D&nbsp;· Technisch</button>
+  <button data-stil="stil-e.css">E&nbsp;· Ergebnis zuerst</button>
+  <button data-stil="stil-f.css">F&nbsp;· Dunkle Mischung</button>
+</div>
+
+<script>
+(function () {
+  var link = document.getElementById("seitenstil");
+  var leiste = document.getElementById("designwahl");
+  if (!link || !leiste) return;
+  var knoepfe = leiste.querySelectorAll("button");
+
+  function setzen(datei, merken) {
+    link.setAttribute("href", datei);
+    for (var i = 0; i < knoepfe.length; i++) {
+      knoepfe[i].setAttribute("aria-pressed", knoepfe[i].dataset.stil === datei ? "true" : "false");
+    }
+    if (merken) { try { localStorage.setItem("entwurf", datei); } catch (e) {} }
+  }
+
+  var gemerkt = null;
+  try { gemerkt = localStorage.getItem("entwurf"); } catch (e) {}
+  var gueltig = false;
+  for (var i = 0; i < knoepfe.length; i++) if (knoepfe[i].dataset.stil === gemerkt) gueltig = true;
+  setzen(gueltig ? gemerkt : "stil-f.css", false);
+
+  leiste.addEventListener("click", function (e) {
+    var k = e.target.closest("button[data-stil]");
+    if (k) setzen(k.dataset.stil, true);
+  });
+})();
+</script>
+<!-- ### ENDMARKE UMSCHALTER ########################################### -->
+
+</body>
+</html>
