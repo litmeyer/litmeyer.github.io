@@ -87,13 +87,13 @@
     <li>
       <a href="#zusammenstellung">
         <span class="zahl">1.825<span class="von">von 1.838</span></span>
-        <span class="satz">so weit hinten landet, wer einfach die besten Cores nimmt</span>
+        <span class="satz">so weit hinten landet, wer einfach die beste Variante nimmt</span>
       </a>
     </li>
     <li>
       <a href="#mindestkosten">
         <span class="zahl">0,9<span class="mal">%</span></span>
-        <span class="satz">der Myth Points bringen drei Viertel der Holy Power</span>
+        <span class="satz">der Ausgaben bringen drei Viertel des Gewinns</span>
       </a>
     </li>
     <li>
@@ -105,7 +105,7 @@
     <li>
       <a href="#wechsel">
         <span class="zahl">3</span>
-        <span class="satz">Bälle vor Schluss wechselt man die Beere – egal, mit wie vielen man startet</span>
+        <span class="satz">Bälle vor Schluss wechselt man – egal, mit wie vielen man startet</span>
       </a>
     </li>
   </ol>
@@ -128,7 +128,7 @@
     <strong>Pokémon&nbsp;GO</strong>. Spiele sind dafür das ideale Übungsfeld: Alle
     Wahrscheinlichkeiten und Preise sind messbar, jede Strategie lässt sich beliebig oft
     durchrechnen, und was zusätzliches Wissen wert ist, lässt sich auf die Spielwährung genau
-    beziffern. Die Methode dahinter ist dieselbe, egal ob es um Alz, Instandhaltung oder ein
+    beziffern. Die Methode dahinter ist dieselbe, egal ob es um Geld, Instandhaltung oder ein
     Investitionsbudget geht.
   </p>
 
@@ -155,9 +155,9 @@
   </p>
 
   <p class="frage">
-    Im Auktionshaus gibt es zwei Hilfsmittel. Ein <strong>Safeguard</strong> (9.388&nbsp;Alz)
+    Ein <strong>Safeguard</strong> kostet 9.388&nbsp;Alz und
     verhindert den Rückfall; bezahlt wird er nur, wenn tatsächlich einer eingetreten wäre. Ein
-    <strong>Erfolgsbooster</strong> (im Spiel „Potion of Enhancement", 7.444&nbsp;Alz) hebt die
+    <strong>Erfolgsbooster</strong> (7.444&nbsp;Alz) hebt die
     Erfolgschance um 14,2&nbsp;Prozentpunkte und
     wird bei jedem Versuch fällig, auch bei den misslungenen.
     <strong>Ab welcher Stufe lohnt sich welches?</strong>
@@ -250,7 +250,7 @@
 
   <p>
     Schon an dieser Tabelle sieht man, warum Rechnen hier etwas bringt: <strong>Die Preise
-    kommen aus dem Auktionshaus und folgen der Stärke nicht.</strong> Lv5 ist schwächer als Lv6
+    kommen aus vom Markt und folgen der Stärke nicht.</strong> Lv5 ist schwächer als Lv6
     und kostet trotzdem das 65-fache. Wer nach Gefühl einkauft, hat keine Chance.
   </p>
 
@@ -305,20 +305,18 @@ return (attemptCost + (1.0 - p) * expectedRepairCost) / p;</code></pre>
   <h2>Wie erreicht man ein Ziel mit den geringsten Kosten?</h2>
 
   <p class="frage">
-    Cabal hat ein zweites Ausbausystem, das <strong>Myth-System</strong>: <strong>78 Nodes</strong>,
+    Cabal hat ein weiteres System, das <strong>Myth-System</strong>: <strong>78 Nodes</strong>,
     die unabhängig voneinander belegt werden können. Jede Belegung bringt
     <strong>Holy Power</strong> und kostet <strong>Myth Points</strong> – eine eigene Währung
-    dieses Systems. Man verdient sie, indem man die Spielfigur zurücksetzt und wieder
-    hochspielt – eine solche <strong>Wiedergeburt</strong> bringt insgesamt gut 370 davon,
-    allerdings nicht auf einen Schlag, sondern nach und nach. Der Preis ist dabei selbst ein Erwartungswert, denn die Belegung wird
-    erwürfelt – man zahlt so lange, bis sie sitzt. Eine Ziel-Holy-Power ist vorgegeben.
+    dieses Systems. Eine <strong>Wiedergeburt</strong> bringt insgesamt gut 370 davon.
+    Der Preis ist dabei selbst ein Erwartungswert, denn die Belegung wird
+    gewürfelt – man zahlt so lange, bis sie sitzt. Eine Ziel-Holy-Power ist vorgegeben.
     <strong>Welche Belegung der 78 Nodes ist die billigste?</strong>
   </p>
 
   <p>
     Ein klassisches Budgetproblem – nur dass die Daten aus der Praxis kommen und nicht aus einer
-    Übungsaufgabe: eine Tabelle mit <strong>2.840 Zeilen</strong>, deutschen Zahlformaten,
-    wechselnden Trennzeichen und unvollständigen Zeilen, die das Programm abfangen muss.
+    Übungsaufgabe: eine Tabelle mit <strong>2.840 Zeilen</strong>.
   </p>
 
   <p>
@@ -466,8 +464,8 @@ return (attemptCost + (1.0 - p) * expectedRepairCost) / p;</code></pre>
   <h2>Wann tauscht man Ertrag gegen Sicherheit?</h2>
 
   <p class="frage">
-    In <strong>Pokémon&nbsp;GO</strong> fängt man ein Pokémon mit höchstens
-    <strong>zwanzig Bällen</strong>. Der erste Treffer beendet den Fang – bricht es bis zum
+    In <strong>Pokémon&nbsp;GO</strong> fängt man ein Raid-Pokémon mit höchstens
+    <strong>zwanzig Bällen</strong>. Bricht es bis zum
     letzten Ball aus, geht man ohne Bonbons nach Hause. Vor jedem Wurf darf man eine Beere
     einsetzen, und die beiden guten unterscheiden sich darin, was sie verbessern.
     <strong>Wann sollte man wechseln?</strong>
@@ -494,7 +492,7 @@ return (attemptCost + (1.0 - p) * expectedRepairCost) / p;</code></pre>
     Zwei Größen hängen dabei zusammen: Je mehr Bälle man zu Beginn hat, desto später könnte der
     Wechsel sinnvoll sein. Ich habe deshalb für jede Ballzahl von 1 bis 20 jeden möglichen
     Wechselzeitpunkt durchgerechnet, eine Million Durchläufe je Punkt. Insgesamt
-    <strong>210 Millionen simulierte Fänge</strong>, Rechenzeit 34 Sekunden.
+    <strong>210 Millionen simulierte Fänge</strong>.
   </p>
 
   <figure>
